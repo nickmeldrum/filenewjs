@@ -1,0 +1,2 @@
+window.Mouse = window.Mouse || {};
+

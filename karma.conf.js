@@ -3,6 +3,7 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
+      'http://d3js.org/d3.v3.min.js',
       'js/*.js',
       'test/**/*Spec.js'
     ],

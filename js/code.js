@@ -26,25 +26,20 @@ window.Mouse.Ajax = function() {
         post: function (url, body, success, failure) {
             var r = new XMLHttpRequest(); 
             r.open("POST", url, true);
+            // http://stackoverflow.com/questions/14146353/rest-api-get-post-using-jquery-ajax-to-get-node-using-neo4j-graph-database
+            r.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            r.setRequestHeader("Accept", undefined);
             r.onreadystatechange = function () {
-                if (r.readyState != 4 || r.status != 200) failure(r); 
-                success(r);
+                if (r.readyState != 4 || r.status != 200) return; 
+                if (success) success(r);
             };
             r.send(body);
-       },
-       get: function (url, success, failure) {
-            var r = new XMLHttpRequest(); 
-            r.open("GET", url, true);
-            r.onreadystatechange = function () {
-                if (r.readyState != 4 || r.status != 200) failure(r); 
-                success(r);
-            };
-            r.send();
        }
    };
 }();
 
 window.Mouse.Program = function() {
+    window.Mouse.Ajax.post("http://localhost:7474/db/data/cypher", "query=match+(n)+return+n%3B", function(d) {console.log(d)});
     window.Mouse.Display.execute();
 }();
 

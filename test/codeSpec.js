@@ -10,6 +10,10 @@ describe('Ajax Body Converter', function () {
     });
 });
 
-describe('', function() {
+describe('Display', function() {
+   it('creates 3 circles', function () {
+       window.Mouse.Display.execute();
+       expect(document.getElementsByTagName('circle').length).toEqual(3);
+   });
 });
 

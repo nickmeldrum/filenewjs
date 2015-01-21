@@ -10,3 +10,6 @@ describe('Ajax Body Converter', function () {
     });
 });
 
+describe('', function() {
+});
+

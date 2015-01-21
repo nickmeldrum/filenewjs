@@ -23,7 +23,7 @@ window.Mouse.Display = function () {
 
 window.Mouse.Ajax = function() {
     return {
-        post: function (url, body, success, failure) {
+        post: function (url, bodyJson, success, failure) {
             var r = new XMLHttpRequest(); 
             r.open("POST", url, true);
             // http://stackoverflow.com/questions/14146353/rest-api-get-post-using-jquery-ajax-to-get-node-using-neo4j-graph-database
@@ -33,13 +33,24 @@ window.Mouse.Ajax = function() {
                 if (r.readyState != 4 || r.status != 200) return; 
                 if (success) success(r);
             };
-            r.send(body);
+            r.send(window.Mouse.Ajax.BodyConverter.fromJsonToFormUrlEncoded(bodyJson));
        }
    };
 }();
 
+window.Mouse.Ajax.BodyConverter = function() {
+    return {
+        fromJsonToFormUrlEncoded: function(json) {
+            var urlEncoded = json.reduce(function(previous, current, index, array) {
+                return previous + current.Name + '=' + encodeURIComponent(current.Value).replace(/%20/g, '+') + "&";
+            }, '');
+            return urlEncoded.substring(0, urlEncoded.length - 1);
+        }
+    };
+}();
+
 window.Mouse.Program = function() {
-    window.Mouse.Ajax.post("http://localhost:7474/db/data/cypher", "query=match+(n)+return+n%3B", function(d) {console.log(d)});
+    window.Mouse.Ajax.post("http://localhost:7474/db/data/cypher", [{Name: 'query', Value: 'match (n) return n;'}], function(d) {console.log(d)});
     window.Mouse.Display.execute();
 }();
 

@@ -41,6 +41,8 @@ window.Mouse.Ajax = function() {
 window.Mouse.Ajax.BodyConverter = function() {
     return {
         fromJsonToFormUrlEncoded: function(json) {
+            if (!json || json.constructor !== Array) json = [json];
+
             var urlEncoded = json.reduce(function(previous, current, index, array) {
                 return previous + current.Name + '=' + encodeURIComponent(current.Value).replace(/%20/g, '+') + "&";
             }, '');

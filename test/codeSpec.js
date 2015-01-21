@@ -3,5 +3,10 @@ describe('Ajax Body Converter', function () {
         this.jsonResult = window.Mouse.Ajax.BodyConverter.fromJsonToFormUrlEncoded([{Name: 'name', Value: 'Nick'}]);
         expect(this.jsonResult).toEqual('name=Nick');
     });
+
+    it('allows us to pass in a json object instead of an array when there is 1 value', function () {
+        this.jsonResult = window.Mouse.Ajax.BodyConverter.fromJsonToFormUrlEncoded({Name: 'name', Value: 'Nick'});
+        expect(this.jsonResult).toEqual('name=Nick');
+    });
 });
 

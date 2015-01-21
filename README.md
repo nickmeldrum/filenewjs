@@ -12,7 +12,7 @@ Thanks to Pete Bacon Darwin from [angular-seed](https://github.com/angular/angul
   2. Type "npm install"
   3. ...
   4. PROFIT!
-  5. To include client side dependencies use bower e.g.: "bower install bootstrap"
+  5. To include client side dependencies use bower e.g.: "bower install bootstrap" (if that doesn't work you either need to npm install bower-cli or just run "node node_modules\bower\bin\bower install bootstrap" instead)
 
 ## Running:
 

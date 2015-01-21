@@ -4,8 +4,7 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     files: [
       'bower_components/d3/d3.min.js',
-      'js/*.js',
-      'test/**/*Spec.js'
+      'js/**/*.js'
     ],
     exclude: [],
     preprocessors: {},

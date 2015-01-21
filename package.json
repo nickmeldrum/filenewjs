@@ -8,8 +8,15 @@
     "karma": "^0.12.31",
     "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4"
-   },
-   "scripts": {
-    "postinstall": "bower install"
-   }
+  },
+  "scripts": {
+   "postinstall": "bower install",
+ 
+   "prestart": "npm install",
+   "start": "node node_modules/http-server/bin/http-server -a localhost -p 8000 -c-1",
+
+   "pretest": "npm install",
+   "test": "node node_modules/karma/bin/karma start",
+   "test-single-run": "karma start karma.conf.js  --single-run"
+  }
 }

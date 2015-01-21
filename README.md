@@ -11,7 +11,7 @@ A client side library for visualising neo4j graphs
 
 ## Running:
 
-  1. Type "test" to run karma tests (or run ".\test" if running in PowerShell)
-  2. Type "run" to start the web server (".\run")
-  3. Type "browse" to browse to the home page (".\browse")
+  1. Type "npm test" to run the karma tests
+  2. Type "npm start" to start the web server
+  3. Type "browse" to browse to the home page (".\browse" if you are in powershell)
 

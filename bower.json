@@ -1,0 +1,8 @@
+{
+  "name": "mousejs",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "d3": "~3.5.3"
+  }
+}

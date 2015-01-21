@@ -5,7 +5,7 @@ A client side library for visualising neo4j graphs
 ## Installing:
 
   1. Install nodejs if it isn't already installed: http://nodejs.org/download/
-  2.  Type "npm install" (to download karma/ jasmine and phantomjs dependencies)
+  2.  Type "npm install" (to download karma/ jasmine/ phantomjs/ bower dependencies and to setup bower)
   3.  ...
   4.  PROFIT!
 

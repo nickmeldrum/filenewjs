@@ -3,7 +3,6 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
-      'bower_components/d3/d3.min.js',
       'js/**/*.js'
     ],
     exclude: [],

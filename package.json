@@ -1,5 +1,5 @@
 {
-  "name": "mousejs",
+  "name": "filenewjs",
   "version": "0.0.1",
   "devDependencies": {
     "http-server": "^0.6.1",
@@ -20,3 +20,4 @@
    "test-single-run": "karma start karma.conf.js  --single-run"
   }
 }
+
